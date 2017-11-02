@@ -41,7 +41,7 @@ export const Cypher = {
 			WithParam(name, value) {
 				const obj = query[query.length - 1];
 				if (!(obj && typeof obj === 'object')) {
-					throw new TypeError('expect Node or Relationship');
+					throw new TypeError('expect Node or Edge');
 				}
 				obj.params.push({name, value});
 				return this;
@@ -62,8 +62,8 @@ export const Cypher = {
 				query.push(`-`);
 				return this;
 			},
-			Relationship(name, label) {
-				query.push({type: 'RELATIONSHIP', name, label, params: [], toString() {
+			Edge(name, label) {
+				query.push({type: 'EDGE', name, label, params: [], toString() {
 					const name = this.name ? this.name : '';
 					const label = this.label ? ':' + this.label : '';
 					const params = this.params.map((p) => `${p.name}: ${p.value}`);
@@ -77,7 +77,7 @@ export const Cypher = {
 			get To() {
 				const obj = query[query.length - 1];
 				if (!(obj && typeof obj === 'object')) {
-					throw new TypeError(`expect a Node or Relationship like "Node('foo','Foo').To.Relationship(...)"`)
+					throw new TypeError(`expect a Node or Edge like "Node('foo','Foo').To.Edge(...)"`)
 				}
 				if (obj.type === 'NODE') {
 					query.push('<-');

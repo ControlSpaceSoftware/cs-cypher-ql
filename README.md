@@ -20,9 +20,9 @@ I want to be able to write something like this
 
  Something like:
 ```
-    Cypher.QL.Match.Node('u', 'Person').WithParam('key', '$personKey').Via.Relationship('', 'OWNS').To.Node('ctx', 'Item')
-        .Match.Node('ctx').Via.Relationship('v', 'Color').Via.Node('', 'Color')
-        .Match.Node('ctx').Via.Relationship('s', 'Size').Via.Node()
+    Cypher.QL.Match.Node('u', 'Person').WithParam('key', '$personKey').Via.Edge('', 'OWNS').To.Node('ctx', 'Item')
+        .Match.Node('ctx').Via.Edge('v', 'Color').Via.Node('', 'Color')
+        .Match.Node('ctx').Via.Edge('s', 'Size').Via.Node()
         .Return.Literal('CTX').As('type')
         .And.Float.Count.Distinct.Value('s').As('count')
         .And.Collect.Value('ctx.desc').Sub(0).As('latestDesc')
