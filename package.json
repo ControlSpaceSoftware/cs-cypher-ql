@@ -1,0 +1,42 @@
+{
+	"name": "cs-cypher-ql",
+	"version": "0.0.1",
+	"description": "fluent api for simple cypher queries",
+	"main": "lib/index.js",
+	"directories": {
+		"test": "test"
+	},
+	"scripts": {
+		"help": "build-scripts help",
+		"scripts": "build-scripts scripts",
+		"resources": "build-scripts resources",
+		"compile": "build-scripts compile",
+		"test": "build-scripts test",
+		"commit": "build-scripts commit",
+		"patch": "build-scripts patch",
+		"push": "build-scripts push",
+		"patch-push": "build-scripts patch-push",
+		"clean": "build-scripts clean",
+		"zip": "build-scripts zip",
+		"package-lambda": "build-scripts package-lambda",
+		"upload-lambda": "build-scripts upload-lambda"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ControlSpaceSoftware/cs-cypher-ql.git"
+	},
+	"author": "javadoug",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ControlSpaceSoftware/cs-cypher-ql/issues"
+	},
+	"homepage": "https://github.com/ControlSpaceSoftware/cs-cypher-ql#readme",
+	"devDependencies": {
+		"build-scripts": "github:ControlSpaceSoftware/build-scripts"
+	},
+	"babel": {
+		"presets": [
+			"env"
+		]
+	}
+}
