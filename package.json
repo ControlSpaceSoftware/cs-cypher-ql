@@ -1,6 +1,6 @@
 {
 	"name": "cs-cypher-ql",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"description": "fluent api for simple cypher queries",
 	"main": "lib/index.js",
 	"directories": {
